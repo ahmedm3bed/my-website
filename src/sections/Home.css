@@ -1,0 +1,142 @@
+.dh-hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  direction: rtl;
+  background: #0b1424;
+  font-family: "Cairo", "Tajawal", Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.dh-hero *,
+.dh-hero *::before,
+.dh-hero *::after {
+  box-sizing: border-box;
+}
+
+/* الفيديو في الخلفية */
+.dh-hero .dh-hero__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* الستارة الزرقاء الشفافة فوق الفيديو */
+.dh-hero .dh-hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: rgba(18, 34, 70, 0.68);
+  pointer-events: none;
+}
+
+/* الكلام فوق الفيديو والستارة */
+.dh-hero .dh-hero__content {
+  position: relative;
+  z-index: 2;
+  width: min(620px, 90%);
+  margin: 0 auto;
+  padding-top: 40px;
+  text-align: center;
+  color: #fff;
+}
+
+.dh-hero h1 {
+  margin: 0 0 22px;
+  font-size: clamp(28px, 3.6vw, 42px);
+  line-height: 1.4;
+  font-weight: 700;
+  color: #fff;
+}
+
+.dh-hero p {
+  max-width: 460px;
+  margin: 0 auto 36px;
+  font-size: 15px;
+  line-height: 1.9;
+  font-weight: 500;
+  color: #f1f1f1;
+}
+
+.dh-hero .dh-hero__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.dh-hero .dh-hero__btn {
+  min-width: 122px;
+  height: 42px;
+  padding: 0 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #3a9d8f;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.dh-hero .dh-hero__btn:hover {
+  background: #2e8377;
+  transform: translateY(-2px);
+}
+
+.dh-hero .dh-hero__scroll {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.dh-hero .dh-hero__scroll span:last-child {
+  font-size: 18px;
+  animation: dhScroll 1.5s infinite;
+}
+
+@keyframes dhScroll {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(5px); }
+}
+
+@media (max-width: 768px) {
+  .dh-hero { min-height: 100svh; }
+  .dh-hero h1 { font-size: 26px; }
+  .dh-hero p { font-size: 13px; }
+  .dh-hero .dh-hero__buttons { gap: 10px; }
+  .dh-hero .dh-hero__btn { min-width: 105px; font-size: 12px; }
+}
+
+.hero,
+.dh-hero {
+  margin-top: 0 !important;
+  height: auto !important;
+  min-height: 100vh !important;
+}
+
+.hero-content,
+.dh-hero__content {
+  padding-top: 50px;
+}

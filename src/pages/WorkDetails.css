@@ -1,0 +1,289 @@
+/* =====================================
+   WORK DETAILS  (يستخدم متغيرات index.css)
+===================================== */
+
+.work-details {
+  /* غيّر لون التمييز من هنا (مثلاً #f5a300 للبرتقالي) */
+  --work-accent: var(--glass);
+}
+
+/* ---------- HERO ---------- */
+.work-hero {
+  position: relative;
+  min-height: 340px;
+  display: flex;
+  align-items: flex-end;
+  padding: 130px 0 50px;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+.work-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11, 15, 20, 0.55), rgba(11, 15, 20, 0.85));
+}
+
+.work-hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.work-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--aluminum);
+  margin-bottom: 14px;
+}
+
+.work-breadcrumb a:hover {
+  color: var(--work-accent);
+}
+
+.work-hero h1 {
+  font-family: var(--font-head);
+  font-size: clamp(30px, 4.5vw, 48px);
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.work-hero p {
+  color: #e6eaee;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+/* ---------- CONTENT ---------- */
+.work-content {
+  padding-top: 70px;
+  padding-bottom: 90px;
+  max-width: 1000px;
+}
+
+.work-section {
+  position: relative;
+  padding-bottom: 70px;
+  margin-bottom: 70px;
+}
+
+/* الخط الفاصل القصير بين الأقسام */
+.work-section:not(:last-of-type)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
+  height: 1px;
+  background: var(--border);
+}
+
+.work-section-title {
+  font-family: var(--font-head);
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 800;
+  margin-bottom: 26px;
+}
+
+.work-section-body {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: start;
+  margin-bottom: 50px;
+}
+
+/* القسم الزوجي: الصورة على الجهة التانية */
+.work-section.reverse .work-section-body {
+  grid-template-columns: 1fr 1.2fr;
+}
+
+.work-section.reverse .work-section-text {
+  order: 2;
+}
+
+.work-lead {
+  border-right: 3px solid var(--work-accent);
+  padding-right: 16px;
+  margin-bottom: 20px;
+  font-family: var(--font-head);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.9;
+}
+
+.work-paragraph {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 2;
+  margin-bottom: 14px;
+}
+
+.work-section-image {
+  padding: 0;
+  overflow: hidden;
+  cursor: zoom-in;
+  background: var(--steel);
+}
+
+.work-section-image img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.work-section-image:hover img {
+  transform: scale(1.05);
+}
+
+/* ---------- GALLERY TITLE ---------- */
+.work-gallery-title {
+  position: relative;
+  font-family: var(--font-head);
+  font-size: 22px;
+  font-weight: 800;
+  padding-bottom: 14px;
+  margin-bottom: 24px;
+}
+
+.work-gallery-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 28px;
+  height: 3px;
+  background: var(--work-accent);
+}
+
+/* ---------- CAROUSEL ---------- */
+.carousel {
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-item {
+  flex: 0 0 calc((100% - 28px) / 3);
+  height: 240px;
+  padding: 0;
+  overflow: hidden;
+  cursor: zoom-in;
+  scroll-snap-align: start;
+  background: var(--steel);
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.carousel-item:hover img {
+  transform: scale(1.08);
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: var(--ink);
+  color: #fff;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+
+.carousel-btn:hover {
+  background: var(--work-accent);
+  color: var(--ink);
+}
+
+.carousel-btn-right {
+  right: 0;
+}
+
+.carousel-btn-left {
+  left: 0;
+}
+
+/* ---------- CTA + LIGHTBOX ---------- */
+.work-cta {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(5, 6, 8, 0.92);
+  cursor: zoom-out;
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: 90vh;
+}
+
+.work-not-found {
+  padding: 160px 0;
+  text-align: center;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--work-accent);
+  font-weight: 700;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .work-hero {
+    min-height: 280px;
+    padding-top: 110px;
+  }
+
+  .work-section-body,
+  .work-section.reverse .work-section-body {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .work-section.reverse .work-section-text {
+    order: 0;
+  }
+
+  .carousel-item {
+    flex: 0 0 75%;
+    height: 200px;
+  }
+}
