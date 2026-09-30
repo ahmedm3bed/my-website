@@ -796,32 +796,38 @@ nav.navbar.navbar--solid {
   .menu-button {
     display: flex;
   }
+.nav-menu {
+  position: fixed;
+  top: 76px;
+  right: 0;
+  left: 0;
+  flex-direction: column;
+  background: var(--ink);
+  padding: 30px;
+  gap: 24px;
 
-  .nav-menu {
-    position: fixed;
-    top: 76px;
-    right: 0;
-    left: 0;
-    flex-direction: column;
-    background: var(--ink);
-    padding: 30px;
-    gap: 24px;
-    transform: translateY(-120%);
-    transition: transform var(--transition);
-  }
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
 
-  .nav-menu.open {
-    transform: translateY(0);
-  }
+  transform: translateY(-20px);
+  transition:
+    transform var(--transition),
+    opacity var(--transition),
+    visibility 0s linear var(--transition);
+}
 
-  .navbar-contact {
-    display: none;
-  }
+.nav-menu.open {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 
-  .navbar-phone {
-    font-size: 13px;
-    gap: 6px;
-  }
+  transform: translateY(0);
+  transition:
+    transform var(--transition),
+    opacity var(--transition),
+    visibility 0s;
+}
 
   .services-grid,
   .works-grid,
