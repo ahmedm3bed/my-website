@@ -63,11 +63,6 @@ function Navbar() {
           </svg>
           {PHONE_NUMBER}
         </a>
-
-        <Link to="/#contact" className="navbar-contact">
-          اطلب عرض سعر
-        </Link>
-
         <button
           type="button"
           className={`menu-button ${open ? "active" : ""}`}

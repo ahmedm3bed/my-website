@@ -18,7 +18,7 @@ function Contact() {
               <div className="contact-icon">📞</div>
               <div>
                 <span>الهاتف</span>
-                <a href="tel:+201000000000">+20 100 000 0000</a>
+                <a href="tel:+201043070179">+201043070179</a>
               </div>
             </div>
 
@@ -34,7 +34,7 @@ function Contact() {
               <div className="contact-icon">📍</div>
               <div>
                 <span>العنوان</span>
-                <p>مصر</p>
+                <p>حدائق اكتوبر \محافظه الجيزه \ مصر</p>
               </div>
             </div>
           </div>

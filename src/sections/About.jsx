@@ -10,7 +10,7 @@ import "./About.css";
 
 // صورة صاحب الشركة (حط صورته في src/assets واستوردها بدل اللوجو)
 const OWNER_IMAGE = logo;
-const OWNER_NAME = "اسم صاحب الشركة";
+const OWNER_NAME = "الوليد جلاس";
 const OWNER_TITLE = "مؤسس ومدير الشركة";
 
 const stats = [

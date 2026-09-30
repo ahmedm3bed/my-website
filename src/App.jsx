@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import FloatingWhatsApp from "./components/FloatingWhatsApp";
+
 import Home from "./pages/Home";
 import WorkDetails from "./pages/WorkDetails";
 
@@ -13,10 +15,14 @@ function ScrollToHash() {
   useEffect(() => {
     if (hash) {
       const timer = setTimeout(() => {
-        document.querySelector(hash)?.scrollIntoView({ behavior: "smooth" });
+        document.querySelector(hash)?.scrollIntoView({
+          behavior: "smooth",
+        });
       }, 100);
+
       return () => clearTimeout(timer);
     }
+
     window.scrollTo(0, 0);
   }, [hash, pathname]);
 
@@ -27,12 +33,18 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollToHash />
+
       <Navbar />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/works/:slug" element={<WorkDetails />} />
       </Routes>
+
       <Footer />
+
+      {/* زر الواتساب الثابت */}
+      <FloatingWhatsApp />
     </BrowserRouter>
   );
 }
