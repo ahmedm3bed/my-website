@@ -32,16 +32,16 @@ function Footer() {
         <div className="footer-column">
           <h3>تواصل معنا</h3>
 
-          <a href="tel:+201000000000">
-            📞 +20 100 000 0000
+          <a href="tel:+201043070179">
+            📞+201043070179
           </a>
 
-          <a href="mailto:info@example.com">
-            ✉️ info@example.com
+          <a href="mailto:wlydalghrbawy0@gmail.com">
+            ✉️wlydalghrbawy0@gmail.com
           </a>
 
           <p>
-            📍 مصر
+            📍حدائق اكتوبر \محافظه الجيزه \مصر
           </p>
         </div>
 
@@ -51,7 +51,7 @@ function Footer() {
           <div className="social-links">
 
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/share/1CJogyXqjn/"
               target="_blank"
               rel="noreferrer"
             >
@@ -59,7 +59,7 @@ function Footer() {
             </a>
 
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/waliedelgharabawy?stkn=MW82amZpODJ1YXI2Zg=="
               target="_blank"
               rel="noreferrer"
             >
@@ -67,7 +67,7 @@ function Footer() {
             </a>
 
             <a
-              href="https://tiktok.com"
+              href="http://tiktok.com/@alwledglass"
               target="_blank"
               rel="noreferrer"
             >

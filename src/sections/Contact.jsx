@@ -26,7 +26,7 @@ function Contact() {
               <div className="contact-icon">✉️</div>
               <div>
                 <span>البريد الإلكتروني</span>
-                <a href="mailto:info@example.com">info@example.com</a>
+                <a href="mailto:wlydalghrbawy0@gmail.com">wlydalghrbawy0@gmail.com</a>
               </div>
             </div>
 
