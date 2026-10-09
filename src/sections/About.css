@@ -212,58 +212,218 @@
 }
 
 /* ---------- الشركاء ---------- */
+
 .ab-partners {
-  padding: 90px 0;
-  background: #eef4f8;
+  position: relative;
+  padding: 90px 0 100px;
+  background:
+    linear-gradient(
+      135deg,
+      #f4f8fb 0%,
+      #edf4f8 50%,
+      #f8fbfd 100%
+    );
+  overflow: hidden;
 }
 
+/* خلفية هندسية خفيفة */
+.ab-partners::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  background-image:
+    linear-gradient(
+      120deg,
+      transparent 0%,
+      rgba(0, 153, 255, 0.04) 50%,
+      transparent 100%
+    );
+}
+
+.ab-partners .container {
+  position: relative;
+  z-index: 2;
+}
+
+.ab-partners .ab-head {
+  margin-bottom: 48px;
+}
+
+.ab-partners .ab-label {
+  color: #008ee8;
+  background: rgba(0, 153, 255, 0.08);
+  padding: 7px 18px;
+  border-radius: 30px;
+}
+
+.ab-partners .ab-head h2 {
+  color: var(--ink);
+  margin-top: 12px;
+}
+
+.ab-partners .ab-head p {
+  color: #6d7780;
+}
+
+/* السلايدر */
+
+.ab-partners-slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* منطقة الحركة */
+
 .ab-marquee {
+  flex: 1;
   overflow: hidden;
   direction: ltr;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 7%,
+    #000 93%,
+    transparent
+  );
+
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 7%,
+    #000 93%,
+    transparent
+  );
 }
 
 .ab-marquee-track {
   display: flex;
-  gap: 16px;
+  align-items: center;
+  gap: 12px;
   width: max-content;
-  animation: ab-marquee 28s linear infinite;
+
+  animation: ab-marquee 24s linear infinite;
 }
 
 .ab-marquee:hover .ab-marquee-track {
   animation-play-state: paused;
 }
 
-@keyframes ab-marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
+/* كارت الشريك */
 
 .ab-partner {
   width: 170px;
   height: 84px;
+
   flex-shrink: 0;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 14px;
-  background: #fff;
-  border: 1px solid var(--border);
+
+  padding: 16px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border: 1px solid rgba(20, 40, 60, 0.06);
+
+  box-shadow:
+    0 8px 24px rgba(20, 40, 60, 0.06);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.ab-partner:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 14px 32px rgba(20, 40, 60, 0.11);
 }
 
 .ab-partner img {
-  max-height: 100%;
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
   object-fit: contain;
+
+  transition: transform 0.3s ease;
 }
 
-.ab-partner span {
-  font-family: var(--font-head);
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--muted);
+.ab-partner:hover img {
+  transform: scale(1.05);
 }
 
+/* الأسهم */
+
+.ab-partner-arrow {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  border: 1px solid #18232d;
+
+  color: #18232d;
+
+  font-size: 30px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.ab-partner-arrow:hover {
+  background: var(--ink);
+  color: #fff;
+
+  transform: scale(1.06);
+}
+
+.ab-partner-prev {
+  order: 0;
+}
+
+.ab-marquee {
+  order: 1;
+}
+
+.ab-partner-next {
+  order: 2;
+}
+
+/* الحركة */
+
+@keyframes ab-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ---------- الشهادات ---------- */
 /* ---------- الشهادات ---------- */
 .ab-certs {
   padding: 100px 0 120px;
@@ -273,29 +433,51 @@
 .ab-certs-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  max-width: 900px;
+  gap: 28px;
+  max-width: 960px;
   margin: 0 auto;
 }
 
 .ab-cert {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   aspect-ratio: 3 / 4;
+  padding: 14px;
   overflow: hidden;
-  background: var(--paper);
+  background: #fff;
   border: 1px solid var(--border);
-  box-shadow: 0 10px 30px rgba(11, 15, 20, 0.06);
-  transition: transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 10px 30px rgba(11, 15, 20, 0.07);
+  transition: transform var(--transition), box-shadow var(--transition),
+    border-color var(--transition);
+}
+
+/* إطار ذهبي رفيع داخل الكارت */
+.ab-cert::after {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border: 1px solid rgba(201, 162, 75, 0.35);
+  pointer-events: none;
 }
 
 .ab-cert:hover {
   transform: translateY(-6px);
+  border-color: var(--glass);
   box-shadow: var(--shadow);
 }
 
 .ab-cert img {
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* الصورة كاملة بدون قص */
+  transition: transform 0.4s ease;
+}
+
+.ab-cert:hover img {
+  transform: scale(1.03);
 }
 
 .ab-cert-placeholder {
@@ -347,8 +529,76 @@
     gap: 14px;
   }
 
+  .ab-cert {
+    padding: 8px;
+  }
+
+  .ab-cert::after {
+    inset: 4px;
+  }
+}
+
+@media (max-width: 420px) {
+  .ab-certs-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+  }
+}
+
+
+@media (max-width: 900px) {
+
+  .ab-partners {
+    padding: 75px 0 85px;
+  }
+
+  .ab-partner {
+    width: 150px;
+    height: 76px;
+    padding: 14px;
+  }
+
+  .ab-partner-arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 26px;
+  }
+
+}
+
+
+
+@media (max-width: 600px) {
+
+  .ab-partners-slider {
+    gap: 8px;
+  }
+
   .ab-partner {
     width: 140px;
     height: 72px;
   }
+
+  .ab-partner-arrow {
+    display: none;
+  }
+
+  .ab-marquee {
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      transparent,
+      #000 3%,
+      #000 97%,
+      transparent
+    );
+
+    mask-image: linear-gradient(
+      90deg,
+      transparent,
+      #000 3%,
+      #000 97%,
+      transparent
+    );
+  }
+
 }

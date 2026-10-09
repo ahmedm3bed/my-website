@@ -1,3 +1,13 @@
+import cottonilLogo from "../assets/partners/cottonil.jpg.webp";
+import egyptFoodsLogo from "../assets/partners/egypt-foods.jpg.webp";
+import goldGymLogo from "../assets/partners/golds.jpg.webp";
+import sheratonLogo from "../assets/partners/sheraton.jpg.webp";
+import orascomLogo from "../assets/partners/orascom.jpg.webp";
+import movenpickLogo from "../assets/partners/movenpick.jpg.webp";
+import kempinskiLogo from "../assets/partners/kempinski.jpg.webp";
+import cert1 from "../assets/cert-1.jpg";
+import cert2 from "../assets/cert-2.jpg";
+import cert3 from "../assets/cert-3.jpg";
 import { useEffect, useState } from "react";
 
 import logo from "../assets/logo.jpg";
@@ -22,18 +32,40 @@ const stats = [
 
 // لو عندك لوجو الشريك حط رابط/استيراد الصورة في logo، وإلا هيظهر الاسم
 const partners = [
-  { name: "شريك 1", logo: "" },
-  { name: "شريك 2", logo: "" },
-  { name: "شريك 3", logo: "" },
-  { name: "شريك 4", logo: "" },
-  { name: "شريك 5", logo: "" },
-  { name: "شريك 6", logo: "" },
+  {
+    name: "Cottonil",
+    logo: cottonilLogo,
+  },
+  {
+    name: "Egypt Foods",
+    logo: egyptFoodsLogo,
+  },
+  {
+    name: "Gold's Gym",
+    logo: goldGymLogo,
+  },
+  {
+    name: "Sheraton",
+    logo: sheratonLogo,
+  },
+  {
+    name: "Orascom",
+    logo: orascomLogo,
+  },
+  {
+    name: "kempinski",
+    logo: kempinskiLogo,
+  },
+  {
+    name: "kempinski",
+    logo: movenpickLogo,
+  },
 ];
 
 const certificates = [
-  { title: "شهادة الجودة", image: "" },
-  { title: "شهادة الاعتماد", image: "" },
-  { title: "شهادة التميز", image: "" },
+  { title: "شهادة الجودة", image: cert1 },
+  { title: "شهادة الاعتماد", image: cert2 },
+  { title: "شهادة التميز", image: cert3 },
 ];
 
 /* ===================================================== */
@@ -117,26 +149,67 @@ function About() {
             </p>
 
             <h3 className="ab-social-title">ابقى على تواصل</h3>
-            <div className="ab-social">
-              <a href="#" aria-label="فيسبوك">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                </svg>
-              </a>
-              <a href="#" aria-label="إنستجرام">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="3" y="3" width="18" height="18" rx="5" />
-                  <circle cx="12" cy="12" r="4" />
-                  <circle cx="17.5" cy="6.5" r="1" />
-                </svg>
-              </a>
-              <a href="#" aria-label="يوتيوب">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22 8.5a3 3 0 0 0-2-2C18 6 12 6 12 6s-6 0-8 .5a3 3 0 0 0-2 2C1.5 10.5 1.5 12 1.5 12s0 1.5.5 3.5a3 3 0 0 0 2 2C6 18 12 18 12 18s6 0 8-.5a3 3 0 0 0 2-2c.5-2 .5-3.5.5-3.5s0-1.5-.5-3.5z" />
-                  <path d="M10 15l5-3-5-3z" />
-                </svg>
-              </a>
-            </div>
+          <div className="ab-social">
+  {/* Facebook */}
+  <a
+    href="https://www.facebook.com/share/1CJogyXqjn/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="فيسبوك"
+  >
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+    </svg>
+  </a>
+
+  {/* Instagram */}
+  <a
+    href="https://www.instagram.com/waliedelgharabawy?stkn=MW82amZpODJ1YXI2Zg=="
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="إنستجرام"
+  >
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="1" />
+    </svg>
+  </a>
+
+  {/* TikTok */}
+  <a
+    href="https://tiktok.com/@alwledglass"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="تيك توك"
+  >
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M16 3c.5 2.5 2 4 4.5 4.5" />
+      <path d="M16 3v11a5 5 0 1 1-5-5" />
+    </svg>
+  </a>
+</div>
           </div>
 
           <figure className="ab-owner">
@@ -175,25 +248,57 @@ function About() {
       </section>
 
       {/* ===== الشركاء ===== */}
-      <section className="ab-partners" ref={partnersReveal.ref}>
-        <div className={`container ${vis(partnersReveal.isVisible)}`}>
-          <div className="ab-head">
-            <span className="ab-label">نجاحنا</span>
-            <h2>الشركاء الاستراتيجيين</h2>
-            <p>نفخر بثقة شركائنا وعملائنا الذين شاركونا رحلة النجاح.</p>
-          </div>
+   {/* ===== الشركاء ===== */}
+<section className="ab-partners" ref={partnersReveal.ref}>
+  <div className={`container ${vis(partnersReveal.isVisible)}`}>
+    
+    <div className="ab-head">
+      <span className="ab-label">نجاحنا</span>
 
-          <div className="ab-marquee">
-            <div className="ab-marquee-track">
-              {[...partners, ...partners].map((p, i) => (
-                <div className="ab-partner" key={i}>
-                  {p.logo ? <img src={p.logo} alt={p.name} /> : <span>{p.name}</span>}
-                </div>
-              ))}
+      <h2>الشركاء الاستراتيجيين</h2>
+
+      <p>
+        نفخر بثقة شركائنا وعملائنا الذين شاركونا رحلة النجاح.
+      </p>
+    </div>
+
+    <div className="ab-partners-slider">
+
+      <button
+        className="ab-partner-arrow ab-partner-prev"
+        type="button"
+        aria-label="السابق"
+      >
+        ‹
+      </button>
+
+      <div className="ab-marquee">
+        <div className="ab-marquee-track">
+          {[...partners, ...partners].map((partner, index) => (
+            <div
+              className="ab-partner"
+              key={`${partner.name}-${index}`}
+            >
+              <img
+                src={partner.logo}
+                alt={partner.name}
+              />
             </div>
-          </div>
+          ))}
         </div>
-      </section>
+      </div>
+
+      <button
+        className="ab-partner-arrow ab-partner-next"
+        type="button"
+        aria-label="التالي"
+      >
+        ›
+      </button>
+
+    </div>
+  </div>
+</section>
 
       {/* ===== الشهادات ===== */}
       <section className="ab-certs" ref={certsReveal.ref}>
